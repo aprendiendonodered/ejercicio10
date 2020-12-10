@@ -1,1 +1,484 @@
-[]
+[
+    {
+        "id": "843a731d.814ad",
+        "type": "tab",
+        "label": "csv ejemplo",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fd7b6047.704c6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "aprendiendonodered/alumno00/inicio",
+        "birthQos": "0",
+        "birthPayload": "estoy vivo",
+        "closeTopic": "aprendiendonodered/alumno00/despedida",
+        "closeQos": "2",
+        "closePayload": "me acaban de restear",
+        "willTopic": "aprendiendonodered/alumno00/testamento",
+        "willQos": "2",
+        "willPayload": "me he ido sin despedirme"
+    },
+    {
+        "id": "3212cad5.6778a6",
+        "type": "mqtt in",
+        "z": "843a731d.814ad",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/CPU",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "fd7b6047.704c6",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "b7b1d357.17c15"
+            ]
+        ]
+    },
+    {
+        "id": "ba2267c0.989a38",
+        "type": "mqtt in",
+        "z": "843a731d.814ad",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/Memoria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "fd7b6047.704c6",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "82937275.93a11"
+            ]
+        ]
+    },
+    {
+        "id": "2f1693c7.ab821c",
+        "type": "mqtt in",
+        "z": "843a731d.814ad",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/Temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "fd7b6047.704c6",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "2607a7be.cab188",
+                "55fa651c.75543c"
+            ]
+        ]
+    },
+    {
+        "id": "ed09bc15.a9b4a",
+        "type": "debug",
+        "z": "843a731d.814ad",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "681be8b2.01c5a8",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "parts.index",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "23f30c54.4dc744"
+            ]
+        ]
+    },
+    {
+        "id": "2607a7be.cab188",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "parts.index",
+                "pt": "msg",
+                "to": "3",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 200,
+        "wires": [
+            [
+                "23f30c54.4dc744"
+            ]
+        ]
+    },
+    {
+        "id": "8d4e8df7.b5096",
+        "type": "join",
+        "z": "843a731d.814ad",
+        "name": "",
+        "mode": "auto",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ",",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "3",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "23f991d9.1786be"
+            ]
+        ]
+    },
+    {
+        "id": "55650b62.f1d354",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "parts.index",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 100,
+        "wires": [
+            [
+                "23f30c54.4dc744"
+            ]
+        ]
+    },
+    {
+        "id": "b7b1d357.17c15",
+        "type": "function",
+        "z": "843a731d.814ad",
+        "name": "",
+        "func": "msg.payload = msg.payload.slice(0,-1);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "55650b62.f1d354"
+            ]
+        ]
+    },
+    {
+        "id": "82937275.93a11",
+        "type": "function",
+        "z": "843a731d.814ad",
+        "name": "",
+        "func": "msg.payload = msg.payload.slice(0,-1);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "681be8b2.01c5a8"
+            ]
+        ]
+    },
+    {
+        "id": "55fa651c.75543c",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "parts.index",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "23f30c54.4dc744"
+            ]
+        ]
+    },
+    {
+        "id": "23f30c54.4dc744",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "group id and count",
+        "rules": [
+            {
+                "t": "set",
+                "p": "parts.id",
+                "pt": "msg",
+                "to": "mygroup",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "parts.count",
+                "pt": "msg",
+                "to": "4",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 160,
+        "wires": [
+            [
+                "8d4e8df7.b5096"
+            ]
+        ]
+    },
+    {
+        "id": "dd8e9f24.9968b",
+        "type": "file",
+        "z": "843a731d.814ad",
+        "name": "",
+        "filename": "/data/datos/raspberrypi.csv",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 400,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f04ab9bb.012448",
+        "type": "inject",
+        "z": "843a731d.814ad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"timestamp\",\"CPU\",\"Memory\",\"Temperature\"]",
+        "payloadType": "str",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "dd8e9f24.9968b"
+            ]
+        ]
+    },
+    {
+        "id": "12ff92e5.4d8aed",
+        "type": "comment",
+        "z": "843a731d.814ad",
+        "name": "Crear cabecera csv, borra el fichero, solo usar una vez",
+        "info": "",
+        "x": 220,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "cc54a9c1.d130a8",
+        "type": "comment",
+        "z": "843a731d.814ad",
+        "name": "Recoger datos, ordenarlos y guardar en fichero",
+        "info": "",
+        "x": 200,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "23f991d9.1786be",
+        "type": "file",
+        "z": "843a731d.814ad",
+        "name": "",
+        "filename": "/data/datos/raspberrypi.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            [
+                "ed09bc15.a9b4a"
+            ]
+        ]
+    },
+    {
+        "id": "ce6ac8d5.cb8028",
+        "type": "comment",
+        "z": "843a731d.814ad",
+        "name": "Recuperar los datos del fichero e imprimirlos",
+        "info": "",
+        "x": 190,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ba158cce.6f72b",
+        "type": "file in",
+        "z": "843a731d.814ad",
+        "name": "",
+        "filename": "/data/datos/raspberrypi.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "83efc15c.ee479"
+            ]
+        ]
+    },
+    {
+        "id": "c9d913f5.efcae",
+        "type": "inject",
+        "z": "843a731d.814ad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "ba158cce.6f72b"
+            ]
+        ]
+    },
+    {
+        "id": "83efc15c.ee479",
+        "type": "debug",
+        "z": "843a731d.814ad",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 560,
+        "wires": []
+    }
+]
