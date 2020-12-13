@@ -7,6 +7,13 @@
         "info": ""
     },
     {
+        "id": "3b253ba2.29edc4",
+        "type": "tab",
+        "label": "dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "fd7b6047.704c6",
         "type": "mqtt-broker",
         "name": "",
@@ -26,6 +33,130 @@
         "willTopic": "aprendiendonodered/alumno00/testamento",
         "willQos": "2",
         "willPayload": "me he ido sin despedirme"
+    },
+    {
+        "id": "d91c5c82.a00ee",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "57085614.6881a8",
+        "type": "ui_group",
+        "name": "Acciones",
+        "tab": "d91c5c82.a00ee",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d7afc5a8.5ab858",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ca7ab597.abed28",
+        "type": "ui_group",
+        "name": "Gráficas",
+        "tab": "d91c5c82.a00ee",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "3212cad5.6778a6",
@@ -53,8 +184,8 @@
         "qos": "2",
         "datatype": "auto",
         "broker": "fd7b6047.704c6",
-        "x": 210,
-        "y": 140,
+        "x": 220,
+        "y": 160,
         "wires": [
             [
                 "82937275.93a11"
@@ -71,29 +202,13 @@
         "datatype": "auto",
         "broker": "fd7b6047.704c6",
         "x": 230,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "2607a7be.cab188",
                 "55fa651c.75543c"
             ]
         ]
-    },
-    {
-        "id": "ed09bc15.a9b4a",
-        "type": "debug",
-        "z": "843a731d.814ad",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "681be8b2.01c5a8",
@@ -176,18 +291,18 @@
         "joiner": ",",
         "joinerType": "str",
         "accumulate": false,
-        "timeout": "3",
+        "timeout": "",
         "count": "",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
-        "reduceInitType": "",
+        "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 830,
+        "x": 750,
         "y": 280,
         "wires": [
             [
-                "23f991d9.1786be"
+                "fec27fea.7c4fa"
             ]
         ]
     },
@@ -339,7 +454,7 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 400,
+        "x": 760,
         "y": 420,
         "wires": [
             []
@@ -360,7 +475,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[\"timestamp\",\"CPU\",\"Memory\",\"Temperature\"]",
+        "payload": "timestamp,CPU,Memory,Temperature",
         "payloadType": "str",
         "x": 90,
         "y": 420,
@@ -396,15 +511,15 @@
         "z": "843a731d.814ad",
         "name": "",
         "filename": "/data/datos/raspberrypi.csv",
-        "appendNewline": true,
+        "appendNewline": false,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 1040,
+        "x": 1060,
         "y": 280,
         "wires": [
             [
-                "ed09bc15.a9b4a"
+                "d2d56c44.a4acd"
             ]
         ]
     },
@@ -432,7 +547,8 @@
         "y": 560,
         "wires": [
             [
-                "83efc15c.ee479"
+                "83efc15c.ee479",
+                "c26ffba3.ac4a88"
             ]
         ]
     },
@@ -480,5 +596,709 @@
         "x": 710,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "fec27fea.7c4fa",
+        "type": "csv",
+        "z": "843a731d.814ad",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "23f991d9.1786be"
+            ]
+        ]
+    },
+    {
+        "id": "d2d56c44.a4acd",
+        "type": "debug",
+        "z": "843a731d.814ad",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3c83d86b.bf7248",
+        "type": "ui_button",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "57085614.6881a8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Inicializa Fichero",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "ee784875.b53b88"
+            ]
+        ]
+    },
+    {
+        "id": "ee784875.b53b88",
+        "type": "ui_toast",
+        "z": "3b253ba2.29edc4",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "topic": "Desea inicializar el fichero?",
+        "name": "Inicializa fichero",
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "ea0a285a.8e8988",
+                "7844a52b.69cafc"
+            ]
+        ]
+    },
+    {
+        "id": "ea0a285a.8e8988",
+        "type": "debug",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "24926f37.53bc6",
+        "type": "ui_button",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "57085614.6881a8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Muestra gráfica",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "3cec5128.9f9f1e"
+            ]
+        ]
+    },
+    {
+        "id": "e01ed472.4c1588",
+        "type": "ui_button",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "57085614.6881a8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Manda por correo",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "icon": "",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "e6a0f41a.a41968"
+            ]
+        ]
+    },
+    {
+        "id": "73d5f9b1.7787c8",
+        "type": "ui_chart",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "ca7ab597.abed28",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c375941.9c5876",
+        "type": "ui_chart",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "ca7ab597.abed28",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "CPU",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "163cc6b4.a646a9",
+        "type": "ui_chart",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "ca7ab597.abed28",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Memoria",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60c7e348.47385c",
+        "type": "csv",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "9af889cc.428bf8",
+                "dd623abe.165b18",
+                "3ec2ccea.413254"
+            ]
+        ]
+    },
+    {
+        "id": "9af889cc.428bf8",
+        "type": "change",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "temperatura",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "73d5f9b1.7787c8"
+            ]
+        ]
+    },
+    {
+        "id": "5c19d7d4.b58018",
+        "type": "ui_button",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "group": "57085614.6881a8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Limpia Gráfica",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Blue",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "dc1c740b.b5b3b8"
+            ]
+        ]
+    },
+    {
+        "id": "d9bab124.ee6aa",
+        "type": "e-mail",
+        "z": "3b253ba2.29edc4",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "aprendiendoraspberrypi@gmail.com",
+        "dname": "",
+        "x": 810,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f82ad31d.624af",
+        "type": "change",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "attachments.content",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "attachments.filename",
+                "pt": "msg",
+                "to": "raspberrypi.csv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Datos Raspberry Pi ",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Adjunto los datos de raspberry pi en formato csv",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "d9bab124.ee6aa"
+            ]
+        ]
+    },
+    {
+        "id": "e6a0f41a.a41968",
+        "type": "file in",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "filename": "/data/datos/raspberrypi.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 360,
+        "y": 480,
+        "wires": [
+            [
+                "f82ad31d.624af"
+            ]
+        ]
+    },
+    {
+        "id": "7844a52b.69cafc",
+        "type": "switch",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "69058e06.a5baf"
+            ]
+        ]
+    },
+    {
+        "id": "69058e06.a5baf",
+        "type": "link out",
+        "z": "3b253ba2.29edc4",
+        "name": "Inicializa",
+        "links": [
+            "3235fec0.7312c2"
+        ],
+        "x": 785,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3235fec0.7312c2",
+        "type": "link in",
+        "z": "843a731d.814ad",
+        "name": "inicializa",
+        "links": [
+            "69058e06.a5baf"
+        ],
+        "x": 115,
+        "y": 460,
+        "wires": [
+            [
+                "623cb14e.8ea25"
+            ]
+        ]
+    },
+    {
+        "id": "623cb14e.8ea25",
+        "type": "change",
+        "z": "843a731d.814ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "timestamp,CPU,Memory,Temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "dd8e9f24.9968b"
+            ]
+        ]
+    },
+    {
+        "id": "dc1c740b.b5b3b8",
+        "type": "change",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "73d5f9b1.7787c8",
+                "3c375941.9c5876",
+                "163cc6b4.a646a9"
+            ]
+        ]
+    },
+    {
+        "id": "3cec5128.9f9f1e",
+        "type": "link out",
+        "z": "3b253ba2.29edc4",
+        "name": "lee",
+        "links": [
+            "e6926764.7ff2e8"
+        ],
+        "x": 345,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e6926764.7ff2e8",
+        "type": "link in",
+        "z": "843a731d.814ad",
+        "name": "lee",
+        "links": [
+            "3cec5128.9f9f1e"
+        ],
+        "x": 165,
+        "y": 640,
+        "wires": [
+            [
+                "ba158cce.6f72b"
+            ]
+        ]
+    },
+    {
+        "id": "c26ffba3.ac4a88",
+        "type": "link out",
+        "z": "843a731d.814ad",
+        "name": "datos",
+        "links": [
+            "df357e8a.d25ae"
+        ],
+        "x": 605,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "df357e8a.d25ae",
+        "type": "link in",
+        "z": "3b253ba2.29edc4",
+        "name": "datos",
+        "links": [
+            "c26ffba3.ac4a88"
+        ],
+        "x": 175,
+        "y": 240,
+        "wires": [
+            [
+                "60c7e348.47385c"
+            ]
+        ]
+    },
+    {
+        "id": "dd623abe.165b18",
+        "type": "change",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CPU",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.CPU",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "3c375941.9c5876"
+            ]
+        ]
+    },
+    {
+        "id": "3ec2ccea.413254",
+        "type": "change",
+        "z": "3b253ba2.29edc4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "temperatura",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Memory",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "163cc6b4.a646a9"
+            ]
+        ]
     }
 ]
